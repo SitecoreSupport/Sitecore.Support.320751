@@ -18,7 +18,7 @@
           string typeToVariantMappings = Rendering.DataSourceItem[Sitecore.XA.Feature.Maps.Templates.Map.Fields.TypeToVariantMapping];
           if (!string.IsNullOrEmpty(typeToVariantMappings))
           {
-            var ids = WebUtil.ParseUrlParameters(typeToVariantMappings);
+            var ids = WebUtil.ParseUrlParameters(System.Web.HttpUtility.UrlDecode(typeToVariantMappings));
             foreach (string typeId in ids.AllKeys)
             {
               if (!string.IsNullOrWhiteSpace(ids[typeId]))
